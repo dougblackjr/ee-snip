@@ -1,43 +1,42 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$plugin_info = array(
-	'pi_name' => 'abs_json',
-	'pi_version' => '1.0',
-	'pi_author' => 'Noble Studios',
-	'pi_author_url' => 'http://noblestudios.com/',
-	'pi_description' => 'Returns the input string in JSON friendly form.',
-	'pi_usage' => Abs_json::usage()
-);
-
-	class Abs_json {
+	class Ee_snip {
 
 		public $return_data = "";
 
 		public function __construct() {
 			$this->EE =& get_instance();
-			# Get text
+			
+			// Get text
 			$text = $this->EE->TMPL->tagdata;
 
-	        # Get params
+	        // Get params
 	        $options = $this->EE->TMPL->fetch_param('options','');
 			$isSnippet = $this->EE->TMPL->fetch_param('snippet',0);
 
-			# REMOVE HTML
+			// Remove HTML
 			$text = strip_tags($text);
 
-			# REMOVE LINE BREAKS
+			// Remove line breaks
 			$text =preg_replace( "/\r|\n|\"|\\\|\\/|\t|\\'/", "", $text );
 
-			# SNIP IT
+			// Snip it
 			if ($isSnippet > 0) {
 				$text = $this->shorten_string($text, $isSnippet);
 			}
 
-			# RETURN IT
+			// Return it
 			$this->return_data = $text;
 		}
 
 		function shorten_string($string, $wordsreturned) {
+			/**
+			 * shortens the string
+			 * @var $string = string
+			 * @var  $wordsreturned = How many words would you like to return
+			 * @return string = snipped string
+			 */
+			
 			$retval = $string;
 			$string = preg_replace('/(?<=\S,)(?=\S)/', ' ', $string);
 			$string = str_replace("\n", " ", $string);
@@ -54,7 +53,7 @@ $plugin_info = array(
 			return $retval;
 		}
 
-		function usage() {
+		static function usage() {
 			ob_start();
 			include "usage.php";
 			$buffer = ob_get_contents();

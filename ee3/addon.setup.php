@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'name' => 'abs_json',
+	'name' => 'ee_snip',
 	'version' => '1.0',
-	'author' => 'Noble Studios',
-	'author_url' => 'http://noblestudios.com/',
-	'description' => 'Returns the input string in JSON friendly form.',
+	'author' => 'Doug Black',
+	'author_url' => 'http://dougblackjr.com/',
+	'description' => 'Returns the input string in friendly form.',
 	'settings_exist' => false,
-	'namespace' => 'abs_json/Abs_json'
+	'namespace' => 'ee_snip/Ee_snip'
 );
