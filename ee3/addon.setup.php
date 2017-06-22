@@ -7,5 +7,5 @@ return array(
 	'author_url' => 'http://dougblackjr.com/',
 	'description' => 'Returns the input string in friendly form.',
 	'settings_exist' => false,
-	'namespace' => 'ee_snip/Ee_snip'
+	'namespace' => 'Ee_snip'
 );

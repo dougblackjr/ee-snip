@@ -5,14 +5,13 @@
 		public $return_data = "";
 
 		public function __construct() {
-			$this->EE =& get_instance();
 			
 			// Get text
-			$text = $this->EE->TMPL->tagdata;
+			$text = ee()->TMPL->tagdata;
 
 	        // Get params
-	        $options = $this->EE->TMPL->fetch_param('options','');
-			$isSnippet = $this->EE->TMPL->fetch_param('snippet',0);
+	        $options = ee()->TMPL->fetch_param('options','');
+			$isSnippet = ee()->TMPL->fetch_param('snippet',0);
 
 			// Remove HTML
 			$text = strip_tags($text);
@@ -51,14 +50,6 @@
 				$retval = implode(" ", $array)." ...";
 			}
 			return $retval;
-		}
-
-		static function usage() {
-			ob_start();
-			include "usage.php";
-			$buffer = ob_get_contents();
-			ob_end_clean();
-			return $buffer;
 		}
 
 	}
