@@ -1,5 +1,5 @@
 # ee-snip for ExpressionEngine
-> String cleaner and shortener for EE2 and EE3
+> String cleaner and shortener for EE2 through EE5
  
 Create friendly, clean, and optionally shortened strings.
 
