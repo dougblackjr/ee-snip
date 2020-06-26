@@ -14,7 +14,7 @@ class Ee_snip {
 		$options = ee()->TMPL->fetch_param('options', '');
 		$isSnippet = ee()->TMPL->fetch_param('snippet', 0);
 		$replace = ee()->TMPL->fetch_param('replace');
-		$replaceWith = ee()->TMPL->fetch_param('replace_with')
+		$replaceWith = ee()->TMPL->fetch_param('replace_with');
 
 		// Remove HTML
 		$text = strip_tags($text);
